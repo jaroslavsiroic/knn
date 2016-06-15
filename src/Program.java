@@ -5,13 +5,9 @@ public class Program {
     public static final int nRecords = 10000;
 
     public static void main(String[] args) {
-        ArrayList<Model> modelList = ReadFile.readFile();
-        for(Model m : modelList){
-            System.out.println("\nclass: "+m.iClass+"\nvector:");
-            for (int i = 0; i < m.vector.length; i++) {
-                System.out.print(m.vector[i]+" ");
-            }
-        }
+        ReadFile.readFile();
+        System.out.println("learning set="+ReadFile.learningSet.size());
+        System.out.println("training set="+ReadFile.trainingSet.size());
         //todo split set -> trainingSet learningSet
         //todo choose random model from different set
         //todo calc distance to model form each set model
