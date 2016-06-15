@@ -7,9 +7,9 @@ public class Knn {
     public int k;
     public Map<Model,Double> distances = new HashMap<>();
 
-    private Model uModel;
+    private Model model;
 
-    public double distance(Model model){
+    public double distance(Model uModel){
         double distance=0;
         //double sum = 0;
         for(int i=0; i < uModel.vector.length; i++){
@@ -19,6 +19,9 @@ public class Knn {
         return distance;
     }
 
-
+    private void putDistanceToHashMap(Model uModel){
+        double distance=distance(uModel);
+        distances.put(uModel,distance);
+    }
 
 }
