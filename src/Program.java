@@ -8,6 +8,9 @@ public class Program {
         ReadFile.readFile();
         System.out.println("learning set="+ReadFile.learningSet.size());
         System.out.println("training set="+ReadFile.trainingSet.size());
+
+        Knn knn = new Knn(ReadFile.trainingSet,ReadFile.learningSet.get(0),4);
+
         //todo split set -> trainingSet learningSet
         //todo choose random model from different set
         //todo calc distance to model form each set model
