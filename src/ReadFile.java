@@ -10,7 +10,7 @@ public class ReadFile {
         ArrayList<Model> modelList = new ArrayList<>();
         int iClass;
 
-        try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\User\\IdeaProjects\\knn\\src\\native.txt"))) {
+        try(BufferedReader br = new BufferedReader(new FileReader("D:\\Knn\\knn\\src\\native.txt"))) {
             StringBuilder sb = new StringBuilder();
             String str, string[];
 
