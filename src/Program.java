@@ -55,7 +55,7 @@ public class Program {
         //todo choose random model from different set
         //todo calc distance to model form each set model
         //todo get k nearest neighbours
-        //todo determine the class
+        //todo determine the classhhhiuhui
         //todo check if class is right (AI got it right!?)
         //todo calc percentage (from 100 calculations)
     }
