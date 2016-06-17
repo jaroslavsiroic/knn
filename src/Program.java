@@ -6,11 +6,8 @@ public class Program {
     public static Knn knn = new Knn();
     public static int[] kValues = {1, 2, 3, 5, 7, 11, 21, 51};
 
-    double percent ( int checktimes, int matchtimes){
-        double percentOfMatch = matchtimes / checktimes * 100;
-        return percentOfMatch;
-
-
+    public static double percent ( int checktimes, int matchtimes){
+        return matchtimes / checktimes * 100;
     }
     public static void guessing(){
         int guess;
@@ -40,15 +37,13 @@ public class Program {
             if (guess == model.iClass){
                 System.out.print("and I'm right!!\n"); rightGuesses++;
             } else System.out.print("and I'm wrong :( it was "+ReadFile.learningSet.get(randNum).iClass+"\n");
+            set.add(model);
             System.out.println("-------------------");
         }
-        //return percent(iterations, rightGuesses);
-        return 0;
+        return percent(iterations, rightGuesses);
     }
     public static void main(String[] args) {
         ReadFile.readFile();
-
-
 
 
         //todo split set -> trainingSet learningSet
