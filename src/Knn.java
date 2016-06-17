@@ -5,12 +5,11 @@ public class Knn {
     private Model uModel;
     ArrayList<Model> set;
 
-    public Knn(ArrayList<Model> set, Model uModel, int k){
+    public int init(ArrayList<Model> set, Model uModel, int k){
         this.set = set;
         this.uModel = uModel;
         this.k = k;
-    }
-    public int init(){
+
         for(Model m : set){
             m.distance = distance(m); // calc distance
         }
