@@ -3,8 +3,16 @@ public class Program {
     public static final int nClass = 24;
     public static final int nRecords = 10000;
 
+
+    double percent ( int checktimes, int matchtimes){
+        double percentOfMatch = matchtimes / checktimes * 100;
+        return percentOfMatch;
+
+
+    }
     public static void main(String[] args) {
         ReadFile.readFile();
+
 
         Knn knn;
         int guess;
@@ -20,7 +28,7 @@ public class Program {
             System.out.println("-------------------");
         }
 
-        //todo split set -> trainingSet learningSet
+        //todo split set -> trainingSet learningSet+
         //todo choose random model from different set
         //todo calc distance to model form each set model
         //todo get k nearest neighbours
