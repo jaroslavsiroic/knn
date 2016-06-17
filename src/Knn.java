@@ -31,7 +31,6 @@ public class Knn {
         ArrayList<Model> nearestObjects = new ArrayList<Model>();
         for (Model model : set) {
             nearestObjects.add(model);
-            System.out.println(">>"+model.iClass);
             i++;
             if (i >= k) break;
         }

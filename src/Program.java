@@ -6,8 +6,8 @@ public class Program {
     public static Knn knn = new Knn();
     public static int[] kValues = {1, 2, 3, 5, 7, 11, 21, 51};
 
-    public static double percent ( int checktimes, int matchtimes){
-        return matchtimes / checktimes * 100;
+    public static double percent ( double checktimes, double matchtimes){
+        return ((matchtimes / checktimes)) * 100;
     }
     public static void guessing(){
         int guess;
@@ -32,19 +32,29 @@ public class Program {
             model = set.get(randNum);
             set.remove(randNum);
             guess = knn.init(set,model,k);
-            System.out.print("Checking the "+randNum+" number...");
-            System.out.print(".. Hmm, I guess the number is a "+guess+"... ");
-            if (guess == model.iClass){
-                System.out.print("and I'm right!!\n"); rightGuesses++;
-            } else System.out.print("and I'm wrong :( it was "+ReadFile.learningSet.get(randNum).iClass+"\n");
+            if (guess == model.iClass)
+                rightGuesses++;
             set.add(model);
-            System.out.println("-------------------");
         }
         return percent(iterations, rightGuesses);
     }
+    public static void statistics() {
+        System.out.println("Iterations [100]");
+
+        System.out.println("Learning set:");
+        statOnSet(ReadFile.learningSet,100);
+        System.out.println("Training set:");
+        statOnSet(ReadFile.trainingSet,100);
+    }
+
+    public static void statOnSet(ArrayList<Model> set, int iterations){
+        for (int i = 0; i < kValues.length; i++) {
+            System.out.println("k = "+kValues[i]+" prcnt = "+calcPercentage(kValues[i],set, iterations)+"%");
+        }
+    }
     public static void main(String[] args) {
         ReadFile.readFile();
-
+        statistics();
 
         //todo split set -> trainingSet learningSet
         //todo choose random model from different set
