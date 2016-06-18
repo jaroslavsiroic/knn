@@ -16,8 +16,8 @@ public class Program {
         int guess;
         //int randNum;
         for (int i = 0; i < iterations; i++){
-            //randNum = (int) (Math.random() * set.size());
-            model = set.get(i+100);
+
+            model = set.get(i);
             set.remove(model);
             guess = knn.init(set,model,k);
             if (guess == model.iClass)
