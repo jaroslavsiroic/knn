@@ -11,12 +11,24 @@ public class Program {
     public static double percent ( double checktimes, double matchtimes){
         return ((matchtimes / checktimes)) * 100;
     }
-
+    public static void guessing(){
+        int guess;
+        int randNum;
+        for (int i = 0; i < 20; i++){
+            randNum = (int) (Math.random() * ReadFile.trainingSet.size());
+            guess = knn.init(ReadFile.trainingSet,ReadFile.trainingSet.get(randNum),20);
+            System.out.print("Checking the "+randNum+" number...");
+            System.out.print(".. Hmm, I guess the number is a "+guess+"... ");
+            if (guess == ReadFile.trainingSet.get(randNum).iClass) System.out.print("and I'm right!!\n");
+            else System.out.print("and I'm wrong :( it was "+ReadFile.trainingSet.get(randNum).iClass+"\n");
+            System.out.println("-------------------");
+        }
+    }
     public static double calcPercentage(int k, ArrayList<Model> set, int iterations){
         Model model;
         int rightGuesses = 0;
         int guess;
-        //int randNum;
+
         for (int i = 0; i < iterations; i++){
             //randNum = (int) (Math.random() * set.size());
             model = set.get(i%set.size());
