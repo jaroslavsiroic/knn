@@ -6,12 +6,12 @@ public class ReadFile {
     public static ArrayList<Model> trainingSet = new ArrayList<>(); //70%
     public static ArrayList<Model> testSet = new ArrayList<>(); //30%
 
-    public static int readRecords() {
+    private static int readRecords(String path) {
         int record = 0;
-        String basePath = new File("src\\native.txt").getAbsolutePath();
+
         Scanner s = null;
         try {
-            s = new Scanner(new BufferedReader(new FileReader(basePath)));
+            s = new Scanner(new BufferedReader(new FileReader(path)));
             while (s.hasNextLine()) {
                 record++;
                 s.nextLine();
@@ -22,21 +22,41 @@ public class ReadFile {
             s.close();
         }
         return record;
-
     }
 
     public static void readFile(){
+
+        Scanner scanner = new Scanner(System.in);
+        String basePath = new File("native.txt").getAbsolutePath();
+        BufferedReader br = null;
+
+        try {
+            br = new BufferedReader(new FileReader(basePath));
+        } catch (FileNotFoundException e) {
+            try {
+                basePath = new File("src\\native.txt").getAbsolutePath();
+                br = new BufferedReader(new FileReader(basePath));
+            } catch (FileNotFoundException g) {
+                try {
+                    System.out.println("Cant find the native.txt file here. Pls spec the full path:");
+                    br = new BufferedReader(new FileReader(scanner.next()));
+                } catch (FileNotFoundException e1) {
+                    System.out.println("File not found. Exit");
+                    System.exit(0);
+                }
+            }
+        } finally {
+            createSets(br, readRecords(basePath));
+        }
+
+    }
+
+    private static void createSets(BufferedReader br, int records) {
         double[] mas = new double[Program.nClass];
         int iClass;
-        int records=readRecords();
-        System.out.println(records);
+        String str, string[];
 
-
-        String basePath = new File("src\\native.txt").getAbsolutePath();
-        try (BufferedReader br = new BufferedReader(new FileReader(basePath))) {
-            StringBuilder sb = new StringBuilder();
-            String str, string[];
-
+        try {
             for (int i = 0; i < records; i++) {
                 str = br.readLine();
                 string = str.split("\t");
@@ -56,7 +76,6 @@ public class ReadFile {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
             System.out.println(e.getMessage());
         }
     }
