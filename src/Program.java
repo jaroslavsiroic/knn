@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Program {
     public static final int nClass = 24;
-    public static final int nRecords = 10000;
+    //public static final int nRecords = 10000;
     public static Knn knn = new Knn();
     public static int[] kValues = {1, 2, 3, 5, 7, 11, 21, 51};
 
@@ -12,15 +12,23 @@ public class Program {
         return ((matchtimes / checktimes)) * 100;
     }
     public static void guessing(){
+        Model model;
+        ArrayList<Model> set= new ArrayList<>();
+        set.addAll(ReadFile.trainingSet);
         int guess;
         int randNum;
-        for (int i = 0; i < 20; i++){
-            randNum = (int) (Math.random() * ReadFile.trainingSet.size());
-            guess = knn.init(ReadFile.trainingSet,ReadFile.trainingSet.get(randNum),20);
-            System.out.print("Checking the "+randNum+" number...");
-            System.out.print(".. Hmm, I guess the number is a "+guess+"... ");
-            if (guess == ReadFile.trainingSet.get(randNum).iClass) System.out.print("and I'm right!!\n");
-            else System.out.print("and I'm wrong :( it was "+ReadFile.trainingSet.get(randNum).iClass+"\n");
+        for (int i = 0; i < 5; i++){
+
+            randNum = (int) (Math.random() * set.size());
+            //randNum=i+5000;
+            model = set.get(randNum);
+            set.remove(model);
+            guess = knn.init(set,model,5);
+            //guess = knn.init(ReadFile.trainingSet,ReadFile.trainingSet.get(randNum),5);
+            System.out.print("Checking the "+randNum+" number...");             System.out.print(".. Hmm, I guess the number is a "+guess+"... ");
+           // if (guess == ReadFile.trainingSet.get(randNum).iClass) System.out.print("and I'm right!!\n");
+            if (guess == model.iClass)System.out.print("and I'm right!!\n");
+            else System.out.print("and I'm wrong :( it was "+set.get(randNum).iClass+"\n");
             System.out.println("-------------------");
         }
     }
@@ -28,14 +36,15 @@ public class Program {
         Model model;
         int rightGuesses = 0;
         int guess;
-
+        int randNum;
         for (int i = 0; i < iterations; i++){
-            //randNum = (int) (Math.random() * set.size());
+            randNum = (int) (Math.random() * set.size());
             model = set.get(i%set.size());
+            //model = set.get(randNum);
             set.remove(model);
             guess = knn.init(set,model,k);
-            if (guess == model.iClass)
-                rightGuesses++;
+            if (guess == model.iClass){rightGuesses++;}
+
             set.add(model);
         }
         return percent(iterations, rightGuesses);
@@ -57,6 +66,7 @@ public class Program {
         }
     }
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         ReadFile.readFile();
 
@@ -67,6 +77,8 @@ public class Program {
             System.out.println(e.getMessage()+". Running stand.");
             statistics(100);
         }
+
+        guessing();
 
     }
 }
