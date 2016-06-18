@@ -1,21 +1,35 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ReadFile {
     public static ArrayList<Model> trainingSet = new ArrayList<>(); //70%
     public static ArrayList<Model> testSet = new ArrayList<>(); //30%
 
     public static void readFile(){
+        Scanner scanner = new Scanner(System.in);
+        String basePath = new File("native.txt").getAbsolutePath();
         double[] mas = new double[Program.nClass];
         int iClass;
 
-        String ajsurl = "C:\\Users\\User\\IdeaProjects\\knn\\src\\native.txt";
-        String markurl = "D:\\Knn\\knn\\src\\native.txt";
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(basePath));
+        } catch (FileNotFoundException e) {
+            try {
+                basePath = new File("src\\native.txt").getAbsolutePath();
+                br = new BufferedReader(new FileReader(basePath));
+            } catch (FileNotFoundException g) {
+                try {
+                    System.out.println("Cant find the native.txt file here. Pls spec the full path:");
+                    br = new BufferedReader(new FileReader(scanner.next()));
+                } catch (FileNotFoundException e1) {
+                    System.out.println("File not found. Exit");
+                }
+            }
+        }
 
-        try(BufferedReader br = new BufferedReader(new FileReader(markurl))) {
+        try{
             StringBuilder sb = new StringBuilder();
             String str, string[];
 
