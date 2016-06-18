@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Program {
     public static final int nClass = 24;
@@ -16,8 +18,8 @@ public class Program {
         int guess;
         //int randNum;
         for (int i = 0; i < iterations; i++){
-
-            model = set.get(i);
+            //randNum = (int) (Math.random() * set.size());
+            model = set.get(i%set.size());
             set.remove(model);
             guess = knn.init(set,model,k);
             if (guess == model.iClass)
@@ -26,7 +28,9 @@ public class Program {
         }
         return percent(iterations, rightGuesses);
     }
-    public static void statistics(int iterations) {
+    public static void statistics(int iterations) throws InputMismatchException{
+        if(iterations > 10000) throw new InputMismatchException("Number is too big");
+
         System.out.println("Iterations ["+iterations+"]");
 
         System.out.println("Training set:");
@@ -41,8 +45,16 @@ public class Program {
         }
     }
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         ReadFile.readFile();
-        statistics(100);
+
+        try {
+            System.out.println("Enter iteration num. (Stand: [100]; Max: [10000])");
+            statistics(scanner.nextInt());
+        } catch (InputMismatchException e) {
+            System.out.println(e.getMessage()+". Running stand.");
+            statistics(100);
+        }
 
     }
 }
