@@ -9,19 +9,21 @@ public class Program {
     public static double percent ( double checktimes, double matchtimes){
         return ((matchtimes / checktimes)) * 100;
     }
+    /*
     public static void guessing(){
         int guess;
         int randNum;
         for (int i = 0; i < 20; i++){
-            randNum = (int) (Math.random() * ReadFile.trainingSet.size());
-            guess = knn.init(ReadFile.learningSet,ReadFile.trainingSet.get(randNum),20);
+            randNum = (int) (Math.random() * ReadFile.testSet.size());
+            guess = knn.init(ReadFile.trainingSet,ReadFile.testSet.get(randNum),20);
             System.out.print("Checking the "+randNum+" number...");
             System.out.print(".. Hmm, I guess the number is a "+guess+"... ");
-            if (guess == ReadFile.learningSet.get(randNum).iClass) System.out.print("and I'm right!!\n");
-            else System.out.print("and I'm wrong :( it was "+ReadFile.learningSet.get(randNum).iClass+"\n");
+            if (guess == ReadFile.trainingSet.get(randNum).iClass) System.out.print("and I'm right!!\n");
+            else System.out.print("and I'm wrong :( it was "+ReadFile.trainingSet.get(randNum).iClass+"\n");
             System.out.println("-------------------");
         }
     }
+    */
     public static double calcPercentage(int k, ArrayList<Model> set, int iterations){
         Model model;
         int rightGuesses = 0;
@@ -30,7 +32,7 @@ public class Program {
         for (int i = 0; i < iterations; i++){
             randNum = (int) (Math.random() * set.size());
             model = set.get(randNum);
-            set.remove(randNum);
+            set.remove(model);
             guess = knn.init(set,model,k);
             if (guess == model.iClass)
                 rightGuesses++;
@@ -41,10 +43,10 @@ public class Program {
     public static void statistics() {
         System.out.println("Iterations [100]");
 
-        System.out.println("Learning set:");
-        statOnSet(ReadFile.learningSet,100);
         System.out.println("Training set:");
         statOnSet(ReadFile.trainingSet,100);
+        System.out.println("Testing set:");
+        statOnSet(ReadFile.testSet,100);
     }
 
     public static void statOnSet(ArrayList<Model> set, int iterations){
@@ -56,12 +58,5 @@ public class Program {
         ReadFile.readFile();
         statistics();
 
-        //todo split set -> trainingSet learningSet
-        //todo choose random model from different set
-        //todo calc distance to model form each set model
-        //todo get k nearest neighbours
-        //todo determine the classhhhiuhui
-        //todo check if class is right (AI got it right!?)
-        //todo calc percentage (from 100 calculations)
     }
 }

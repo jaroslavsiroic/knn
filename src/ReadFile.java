@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ReadFile {
-    public static ArrayList<Model> learningSet = new ArrayList<>(); //70%
-    public static ArrayList<Model> trainingSet = new ArrayList<>(); //30%
+    public static ArrayList<Model> trainingSet = new ArrayList<>(); //70%
+    public static ArrayList<Model> testSet = new ArrayList<>(); //30%
 
     public static void readFile(){
         double[] mas = new double[Program.nClass];
@@ -15,7 +15,7 @@ public class ReadFile {
         String ajsurl = "C:\\Users\\User\\IdeaProjects\\knn\\src\\native.txt";
         String markurl = "D:\\Knn\\knn\\src\\native.txt";
 
-        try(BufferedReader br = new BufferedReader(new FileReader(ajsurl))) {
+        try(BufferedReader br = new BufferedReader(new FileReader(markurl))) {
             StringBuilder sb = new StringBuilder();
             String str, string[];
 
@@ -30,8 +30,8 @@ public class ReadFile {
                         System.out.println("ERROR PARSING DOUBLE");
                     }
                 }
-                if(i>=7000) trainingSet.add(new Model(iClass,mas));
-                else learningSet.add(new Model(iClass,mas));
+                if(i>=7000) testSet.add(new Model(iClass,mas));
+                else trainingSet.add(new Model(iClass,mas));
                 mas = new double[Program.nClass];
             }
         } catch (FileNotFoundException e) {
