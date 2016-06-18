@@ -36,11 +36,11 @@ public class Program {
         Model model;
         int rightGuesses = 0;
         int guess;
-        int randNum;
+
+        if (iterations > set.size()) iterations = set.size();
+
         for (int i = 0; i < iterations; i++){
-            randNum = (int) (Math.random() * set.size());
-            model = set.get(i%set.size());
-            //model = set.get(randNum);
+            model = set.get(i);
             set.remove(model);
             guess = knn.init(set,model,k);
             if (guess == model.iClass){rightGuesses++;}
