@@ -31,7 +31,7 @@ public class Program {
         //int randNum;
         for (int i = 0; i < iterations; i++){
             //randNum = (int) (Math.random() * set.size());
-            model = set.get(i);
+            model = set.get(i+100);
             set.remove(model);
             guess = knn.init(set,model,k);
             if (guess == model.iClass)
@@ -40,13 +40,13 @@ public class Program {
         }
         return percent(iterations, rightGuesses);
     }
-    public static void statistics() {
-        System.out.println("Iterations [100]");
+    public static void statistics(int iterations) {
+        System.out.println("Iterations ["+iterations+"]");
 
         System.out.println("Training set:");
-        statOnSet(ReadFile.trainingSet,100);
+        statOnSet(ReadFile.trainingSet,iterations);
         System.out.println("Testing set:");
-        statOnSet(ReadFile.testSet,100);
+        statOnSet(ReadFile.testSet,iterations);
     }
 
     public static void statOnSet(ArrayList<Model> set, int iterations){
@@ -56,7 +56,7 @@ public class Program {
     }
     public static void main(String[] args) {
         ReadFile.readFile();
-        statistics();
+        statistics(1000);
 
     }
 }
