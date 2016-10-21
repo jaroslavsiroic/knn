@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Created by kosciuszko on 16.10.21.
  */
 public class AtributeTester {
-
+    private Statistics statistics = new Statistics();
 
 
 
@@ -23,4 +23,23 @@ public class AtributeTester {
         }
         return arrayList;
     }
+
+    public ArrayList<Model> getBestSet (ArrayList<ArrayList<Model>> setOfSets, int k) {
+        double bestPercent = 0;
+        int bestSetIndex = 0;
+        double perc;
+        for (int i = 0; i < setOfSets.size(); i++) {
+            perc = statistics.calcPercentage(k, setOfSets.get(i));
+
+            if (perc > bestPercent) {
+                bestPercent = perc;
+                bestSetIndex = i;
+            }
+        }
+        return setOfSets.get(bestSetIndex);
+    }
+
+
+
+
 }
