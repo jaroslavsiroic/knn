@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class AtributeTester {
 
     public ArrayList<Integer> getBestCharateristics(ArrayList<Model> initSet, int k, int numberOfCharacteristics){
+    private Statistics statistics = new Statistics();
 
         ArrayList<Integer> indexesOfBestcharacteristics = new ArrayList<>();
 
@@ -37,7 +38,27 @@ public class AtributeTester {
             for (Model model : arrayList) {
                 model.vector[charcteristic] = 0;
             }
+
         }
         return arrayList;
     }
+
+    public ArrayList<Model> getBestSet (ArrayList<ArrayList<Model>> setOfSets, int k) {
+        double bestPercent = 0;
+        int bestSetIndex = 0;
+        double perc;
+        for (int i = 0; i < setOfSets.size(); i++) {
+            perc = statistics.calcPercentage(k, setOfSets.get(i));
+
+            if (perc > bestPercent) {
+                bestPercent = perc;
+                bestSetIndex = i;
+            }
+        }
+        return setOfSets.get(bestSetIndex);
+    }
+
+
+
+
 }
