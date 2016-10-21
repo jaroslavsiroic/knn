@@ -13,4 +13,9 @@ public class Model implements Comparable{
         Model m = (Model) o;
         return m.distance > this.distance ? 1 : 0;
     }
+
+    public Model clone() {
+        Model m = new Model(this.iClass, this.vector);
+        return m;
+    }
 }
