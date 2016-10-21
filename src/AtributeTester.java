@@ -4,9 +4,9 @@ import java.util.ArrayList;
  * Created by kosciuszko on 16.10.21.
  */
 public class AtributeTester {
-
-    public ArrayList<Integer> getBestCharateristics(ArrayList<Model> initSet, int k, int numberOfCharacteristics){
     private Statistics statistics = new Statistics();
+    public ArrayList<Integer> getBestCharateristics(ArrayList<Model> initSet, int k, int numberOfCharacteristics){
+
 
         ArrayList<Integer> indexesOfBestcharacteristics = new ArrayList<>();
 
