@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 public class Statistics {
 
@@ -21,7 +20,7 @@ public class Statistics {
             model = set.get(i);
             set.remove(model);
             guess = knn.init(set,model,k);
-            if (guess == model.iClass){
+            if (guess == model.iClass) {
                 rightGuesses++;
             }
 

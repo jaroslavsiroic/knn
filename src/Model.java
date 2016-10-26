@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Model implements Comparable{
     public int iClass;
     public double[] vector;
@@ -15,7 +17,16 @@ public class Model implements Comparable{
     }
 
     public Model clone() {
-        Model m = new Model(this.iClass, this.vector);
+        Model m = new Model(this.iClass, this.vector.clone());
         return m;
+    }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "iClass=" + iClass +
+                ", vector=" + Arrays.toString(vector) +
+                ", distance=" + distance +
+                '}';
     }
 }
