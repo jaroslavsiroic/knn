@@ -14,8 +14,10 @@ public class AtributeTester {
         return q;
     }
     public void setArrayZeros(ArrayList<Model> set, int attrIndex) {
+
         for (Model model : set) {
             model.vector[attrIndex] = 0;
+            model.excludedIndexes.set(attrIndex,0);
         }
     }
     //clone array
@@ -56,9 +58,9 @@ public class AtributeTester {
         ArrayList<Integer>  bestIndexArr = new ArrayList<>();
         //now lets get best of the best arrayList
         ArrayList<Model> bestSet = getBestOfTheBest(initSet, k, attrToEx);
-        double[] bestVector = bestSet.get(0).vector;
-        for (int i = 0; i < bestVector.length; i++) {
-            if (bestVector[i] != 0) {
+        ArrayList<Integer> bestVector = bestSet.get(0).excludedIndexes;
+        for (int i = 0; i < bestVector.size(); i++) {
+            if (bestVector.get(i) != 0) {
                 bestIndexArr.add(i);
             }
         }

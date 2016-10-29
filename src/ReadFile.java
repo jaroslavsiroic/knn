@@ -35,7 +35,7 @@ public class ReadFile {
             br = new BufferedReader(new FileReader(basePath));
         } catch (FileNotFoundException e) {
             try {
-                basePath = new File("src\\native.txt").getAbsolutePath();
+                basePath = new File("src/native.txt").getAbsolutePath();
                 br = new BufferedReader(new FileReader(basePath));
             } catch (FileNotFoundException g) {
                 try {
