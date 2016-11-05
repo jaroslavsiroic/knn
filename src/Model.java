@@ -5,17 +5,20 @@ public class Model implements Comparable{
     public int iClass;
     public double[] vector;
     public double distance;
-    public ArrayList<Integer> excludedIndexes = new ArrayList<>();
+    public ArrayList<Integer> excludedIndexes;
 
 
 
     public Model(int iClass, double[] vector) {
         this.iClass = iClass;
         this.vector = vector;
-        for (int i=0; i<vector.length;i++){
-            this.excludedIndexes.add(i);
-        }
+        this.excludedIndexes = new ArrayList<>();
+    }
 
+    public Model(int iClass, double[] vector, ArrayList<Integer> excludedIndexes) {
+        this.iClass = iClass;
+        this.vector = vector;
+        this.excludedIndexes = excludedIndexes;
     }
 
     @Override
@@ -25,7 +28,9 @@ public class Model implements Comparable{
     }
 
     public Model clone() {
-        Model m = new Model(this.iClass, this.vector.clone());
+        ArrayList<Integer> newList = new ArrayList<>();
+        newList.addAll(this.excludedIndexes);
+        Model m = new Model(this.iClass, this.vector.clone(), newList);
         return m;
     }
 
