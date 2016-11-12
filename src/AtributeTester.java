@@ -55,9 +55,10 @@ public class AtributeTester {
     // I want to exclude attrToEx (ec. 2) attr and find best attributes
     public ArrayList<String> getBestAttr(ArrayList<Model> initSet, int k, int attrToEx) {
         //so lets do it
-
+        System.out.println("Exclude "+attrToEx+" attr with k="+k);
         ArrayList<Model> bestSet = getBestOfTheBest(initSet, k, attrToEx);
         Model bestModel = bestSet.get(0);
+        System.out.println("Done");
         return  backTrack(bestModel.vector, bestModel.excludedIndexes);
     }
 
@@ -72,22 +73,19 @@ public class AtributeTester {
     }
 
     public ArrayList<Model> getBestSet(ArrayList<ArrayList<Model>> setOfSets, int k) {
-        System.out.println("setOfSets.size() -> "+ setOfSets.size());
-        for (int i = 0; i < setOfSets.get(0).get(0).vector.length; i++) {
-            System.out.println(setOfSets.get(0).get(0).vector[i]);
-        }
         double bestPercent = 0;
         int bestSetIndex = 0;
         double perc;
+        System.out.println("Finding best set out of "+setOfSets.size()+" sets");
         for (int i = 0; i < setOfSets.size(); i++) {
             perc = statistics.calcPercentage(k, setOfSets.get(i));
             if (perc > bestPercent) {
                 bestPercent = perc;
                 bestSetIndex = i;
             }
-            System.out.println("perc "+perc);
-            System.out.println("best perc "+bestPercent+" & bestsetIndex "+ bestSetIndex);
+            System.out.print(i+" ");
         }
+        System.out.println("Found! Best perc "+bestPercent+" & bestsetIndex "+ bestSetIndex);
         return setOfSets.get(bestSetIndex);
     }
 }
