@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class ReadFile {
@@ -48,6 +49,37 @@ public class ReadFile {
             }
         } finally {
             createSets(br, readRecords(basePath));
+        }
+
+        HashMap<Integer, ArrayList<Model>> digitsMap = new HashMap();
+        ArrayList<Model> arr = new ArrayList<>();
+
+        arr.addAll(trainingSet);
+        arr.addAll(testSet);
+        ArrayList<Model> masterSet = Program.clone(arr);
+
+        for (Model model : masterSet) {
+            if (!digitsMap.containsKey(model.iClass)) {
+                digitsMap.put(model.iClass, new ArrayList<>());
+            }
+            digitsMap.get(model.iClass).add(model);
+        }
+
+        trainingSet.clear();
+        testSet.clear();
+
+        int divider;
+        for (Integer i : digitsMap.keySet()) {
+
+            divider = (digitsMap.get(i).size() * 70) / 100; //dividing index
+
+            for (int j = 0; j < digitsMap.get(i).size(); j++) {
+                if (j < divider) {
+                    trainingSet.add(digitsMap.get(i).get(j));
+                } else {
+                    testSet.add(digitsMap.get(i).get(j));
+                }
+            }
         }
 
     }

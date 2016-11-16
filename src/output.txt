@@ -1,0 +1,395 @@
+"C:\Program Files\Java\jdk1.8.0_111\bin\java" -Didea.launcher.port=7538 "-Didea.launcher.bin.path=D:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.2.5\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;D:\workbench\_UWB\knn\out\production\knn;D:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.2.5\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain Program
+
+Calculating with k = 3
+---------------------------------------
+Set: 0 percent: 93.87755102040816%
+Set: 1 percent: 93.841642228739%
+Set: 2 percent: 96.45161290322581%
+Set: 3 percent: 90.42904290429043%
+Set: 4 percent: 91.52542372881356%
+Set: 5 percent: 91.4179104477612%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 89.64401294498381%
+Set: 8 percent: 80.54607508532423%
+Set: 9 percent: 91.74917491749174%
+Set: 10 percent: 91.54460719041279%
+---------------------------------------
+
+
+Calculating with k = 3
+---------------------------------------
+Excluded indexes: [ 18, ]
+Set: 0 percent: 94.21768707482994%
+Set: 1 percent: 93.841642228739%
+Set: 2 percent: 95.80645161290322%
+Set: 3 percent: 89.76897689768977%
+Set: 4 percent: 91.52542372881356%
+Set: 5 percent: 90.67164179104478%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 88.9967637540453%
+Set: 8 percent: 80.54607508532423%
+Set: 9 percent: 91.74917491749174%
+Set: 10 percent: 91.3115845539281%
+
+Excluded indexes: [ 18, 16, ]
+Set: 0 percent: 92.17687074829932%
+Set: 1 percent: 91.20234604105572%
+Set: 2 percent: 95.16129032258065%
+Set: 3 percent: 90.0990099009901%
+Set: 4 percent: 91.52542372881356%
+Set: 5 percent: 89.17910447761194%
+Set: 6 percent: 95.13888888888889%
+Set: 7 percent: 91.2621359223301%
+Set: 8 percent: 83.95904436860067%
+Set: 9 percent: 92.07920792079209%
+Set: 10 percent: 91.21171770972038%
+
+Excluded indexes: [ 18, 16, 15, ]
+Set: 0 percent: 91.83673469387756%
+Set: 1 percent: 91.20234604105572%
+Set: 2 percent: 94.51612903225806%
+Set: 3 percent: 89.76897689768977%
+Set: 4 percent: 90.5084745762712%
+Set: 5 percent: 91.7910447761194%
+Set: 6 percent: 95.83333333333334%
+Set: 7 percent: 89.96763754045307%
+Set: 8 percent: 85.6655290102389%
+Set: 9 percent: 91.0891089108911%
+Set: 10 percent: 91.21171770972038%
+
+Excluded indexes: [ 18, 16, 15, 13, ]
+Set: 0 percent: 94.21768707482994%
+Set: 1 percent: 92.08211143695014%
+Set: 2 percent: 93.87096774193549%
+Set: 3 percent: 89.76897689768977%
+Set: 4 percent: 87.45762711864407%
+Set: 5 percent: 92.16417910447761%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 89.96763754045307%
+Set: 8 percent: 87.03071672354949%
+Set: 9 percent: 92.73927392739274%
+Set: 10 percent: 91.4780292942743%
+
+Excluded indexes: [ 18, 16, 15, 13, 1, ]
+Set: 0 percent: 93.5374149659864%
+Set: 1 percent: 91.78885630498533%
+Set: 2 percent: 92.90322580645162%
+Set: 3 percent: 90.42904290429043%
+Set: 4 percent: 89.83050847457628%
+Set: 5 percent: 92.53731343283582%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 88.3495145631068%
+Set: 8 percent: 87.03071672354949%
+Set: 9 percent: 91.41914191419141%
+Set: 10 percent: 91.3115845539281%
+
+Excluded indexes: [ 18, 16, 15, 13, 1, 0, ]
+Set: 0 percent: 93.19727891156462%
+Set: 1 percent: 90.9090909090909%
+Set: 2 percent: 93.87096774193549%
+Set: 3 percent: 90.75907590759076%
+Set: 4 percent: 90.16949152542372%
+Set: 5 percent: 91.7910447761194%
+Set: 6 percent: 95.13888888888889%
+Set: 7 percent: 90.61488673139159%
+Set: 8 percent: 85.6655290102389%
+Set: 9 percent: 91.74917491749174%
+Set: 10 percent: 91.37816245006658%
+
+---------------------------------------
+
+Calculating with k = 6
+---------------------------------------
+Set: 0 percent: 94.21768707482994%
+Set: 1 percent: 95.01466275659824%
+Set: 2 percent: 95.48387096774194%
+Set: 3 percent: 90.0990099009901%
+Set: 4 percent: 90.84745762711864%
+Set: 5 percent: 89.92537313432835%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 90.93851132686083%
+Set: 8 percent: 80.54607508532423%
+Set: 9 percent: 91.41914191419141%
+Set: 10 percent: 91.4780292942743%
+---------------------------------------
+
+
+Calculating with k = 6
+---------------------------------------
+Excluded indexes: [ 16, ]
+Set: 0 percent: 93.87755102040816%
+Set: 1 percent: 92.37536656891496%
+Set: 2 percent: 95.80645161290322%
+Set: 3 percent: 90.75907590759076%
+Set: 4 percent: 91.52542372881356%
+Set: 5 percent: 91.04477611940298%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 90.29126213592234%
+Set: 8 percent: 82.93515358361775%
+Set: 9 percent: 92.07920792079209%
+Set: 10 percent: 91.6444740346205%
+
+Excluded indexes: [ 16, 11, ]
+Set: 0 percent: 93.87755102040816%
+Set: 1 percent: 91.78885630498533%
+Set: 2 percent: 95.16129032258065%
+Set: 3 percent: 88.44884488448845%
+Set: 4 percent: 89.15254237288136%
+Set: 5 percent: 89.17910447761194%
+Set: 6 percent: 94.79166666666666%
+Set: 7 percent: 90.61488673139159%
+Set: 8 percent: 82.93515358361775%
+Set: 9 percent: 91.41914191419141%
+Set: 10 percent: 90.77896138482025%
+
+Excluded indexes: [ 16, 11, 4, ]
+Set: 0 percent: 95.23809523809523%
+Set: 1 percent: 91.78885630498533%
+Set: 2 percent: 95.48387096774194%
+Set: 3 percent: 88.11881188118812%
+Set: 4 percent: 89.49152542372882%
+Set: 5 percent: 88.05970149253731%
+Set: 6 percent: 95.83333333333334%
+Set: 7 percent: 90.93851132686083%
+Set: 8 percent: 84.30034129692832%
+Set: 9 percent: 90.75907590759076%
+Set: 10 percent: 91.04527296937417%
+
+Excluded indexes: [ 16, 11, 4, 2, ]
+Set: 0 percent: 94.5578231292517%
+Set: 1 percent: 90.9090909090909%
+Set: 2 percent: 96.45161290322581%
+Set: 3 percent: 88.44884488448845%
+Set: 4 percent: 89.49152542372882%
+Set: 5 percent: 89.92537313432835%
+Set: 6 percent: 95.13888888888889%
+Set: 7 percent: 91.58576051779936%
+Set: 8 percent: 85.6655290102389%
+Set: 9 percent: 90.42904290429043%
+Set: 10 percent: 91.27829560585884%
+
+Excluded indexes: [ 16, 11, 4, 2, 1, ]
+Set: 0 percent: 94.89795918367348%
+Set: 1 percent: 90.02932551319648%
+Set: 2 percent: 96.45161290322581%
+Set: 3 percent: 88.77887788778878%
+Set: 4 percent: 91.18644067796609%
+Set: 5 percent: 88.80597014925374%
+Set: 6 percent: 95.13888888888889%
+Set: 7 percent: 89.96763754045307%
+Set: 8 percent: 83.61774744027304%
+Set: 9 percent: 90.75907590759076%
+Set: 10 percent: 90.97869507323568%
+
+Excluded indexes: [ 16, 11, 4, 2, 1, 0, ]
+Set: 0 percent: 93.87755102040816%
+Set: 1 percent: 90.9090909090909%
+Set: 2 percent: 94.51612903225806%
+Set: 3 percent: 89.43894389438944%
+Set: 4 percent: 91.18644067796609%
+Set: 5 percent: 88.80597014925374%
+Set: 6 percent: 94.09722222222221%
+Set: 7 percent: 90.61488673139159%
+Set: 8 percent: 82.93515358361775%
+Set: 9 percent: 90.75907590759076%
+Set: 10 percent: 90.74567243675101%
+
+---------------------------------------
+
+Calculating with k = 9
+---------------------------------------
+Set: 0 percent: 93.5374149659864%
+Set: 1 percent: 93.54838709677419%
+Set: 2 percent: 94.19354838709677%
+Set: 3 percent: 90.0990099009901%
+Set: 4 percent: 88.13559322033898%
+Set: 5 percent: 90.29850746268657%
+Set: 6 percent: 95.83333333333334%
+Set: 7 percent: 88.67313915857605%
+Set: 8 percent: 80.54607508532423%
+Set: 9 percent: 91.74917491749174%
+Set: 10 percent: 90.71238348868175%
+---------------------------------------
+
+
+Calculating with k = 9
+---------------------------------------
+Excluded indexes: [ 16, ]
+Set: 0 percent: 92.85714285714286%
+Set: 1 percent: 90.02932551319648%
+Set: 2 percent: 93.87096774193549%
+Set: 3 percent: 91.74917491749174%
+Set: 4 percent: 88.47457627118645%
+Set: 5 percent: 92.91044776119402%
+Set: 6 percent: 95.83333333333334%
+Set: 7 percent: 88.67313915857605%
+Set: 8 percent: 82.93515358361775%
+Set: 9 percent: 92.4092409240924%
+Set: 10 percent: 90.94540612516646%
+
+Excluded indexes: [ 16, 15, ]
+Set: 0 percent: 92.17687074829932%
+Set: 1 percent: 89.14956011730204%
+Set: 2 percent: 93.54838709677419%
+Set: 3 percent: 91.74917491749174%
+Set: 4 percent: 89.49152542372882%
+Set: 5 percent: 92.91044776119402%
+Set: 6 percent: 96.52777777777779%
+Set: 7 percent: 88.9967637540453%
+Set: 8 percent: 85.32423208191126%
+Set: 9 percent: 91.74917491749174%
+Set: 10 percent: 91.11185086551265%
+
+Excluded indexes: [ 16, 15, 12, ]
+Set: 0 percent: 92.85714285714286%
+Set: 1 percent: 91.20234604105572%
+Set: 2 percent: 92.90322580645162%
+Set: 3 percent: 92.4092409240924%
+Set: 4 percent: 89.49152542372882%
+Set: 5 percent: 89.92537313432835%
+Set: 6 percent: 95.83333333333334%
+Set: 7 percent: 89.32038834951457%
+Set: 8 percent: 85.32423208191126%
+Set: 9 percent: 91.0891089108911%
+Set: 10 percent: 91.04527296937417%
+
+Excluded indexes: [ 16, 15, 12, 4, ]
+Set: 0 percent: 92.85714285714286%
+Set: 1 percent: 91.78885630498533%
+Set: 2 percent: 93.2258064516129%
+Set: 3 percent: 91.0891089108911%
+Set: 4 percent: 89.15254237288136%
+Set: 5 percent: 90.29850746268657%
+Set: 6 percent: 94.79166666666666%
+Set: 7 percent: 89.96763754045307%
+Set: 8 percent: 85.32423208191126%
+Set: 9 percent: 90.42904290429043%
+Set: 10 percent: 90.9121171770972%
+
+Excluded indexes: [ 16, 15, 12, 4, 2, ]
+Set: 0 percent: 91.49659863945578%
+Set: 1 percent: 91.20234604105572%
+Set: 2 percent: 93.87096774193549%
+Set: 3 percent: 91.0891089108911%
+Set: 4 percent: 89.15254237288136%
+Set: 5 percent: 89.17910447761194%
+Set: 6 percent: 94.44444444444444%
+Set: 7 percent: 90.61488673139159%
+Set: 8 percent: 85.6655290102389%
+Set: 9 percent: 91.41914191419141%
+Set: 10 percent: 90.84553928095872%
+
+Excluded indexes: [ 16, 15, 12, 4, 2, 0, ]
+Set: 0 percent: 91.49659863945578%
+Set: 1 percent: 90.6158357771261%
+Set: 2 percent: 92.58064516129032%
+Set: 3 percent: 90.75907590759076%
+Set: 4 percent: 89.83050847457628%
+Set: 5 percent: 89.92537313432835%
+Set: 6 percent: 94.79166666666666%
+Set: 7 percent: 90.93851132686083%
+Set: 8 percent: 84.64163822525597%
+Set: 9 percent: 91.0891089108911%
+Set: 10 percent: 90.67909454061251%
+
+---------------------------------------
+
+Calculating with k = 12
+---------------------------------------
+Set: 0 percent: 91.83673469387756%
+Set: 1 percent: 92.66862170087975%
+Set: 2 percent: 93.54838709677419%
+Set: 3 percent: 90.42904290429043%
+Set: 4 percent: 88.13559322033898%
+Set: 5 percent: 90.67164179104478%
+Set: 6 percent: 96.18055555555556%
+Set: 7 percent: 89.64401294498381%
+Set: 8 percent: 78.49829351535837%
+Set: 9 percent: 92.73927392739274%
+Set: 10 percent: 90.47936085219706%
+---------------------------------------
+
+
+Calculating with k = 12
+---------------------------------------
+Excluded indexes: [ 16, ]
+Set: 0 percent: 91.15646258503402%
+Set: 1 percent: 90.6158357771261%
+Set: 2 percent: 93.87096774193549%
+Set: 3 percent: 91.74917491749174%
+Set: 4 percent: 88.47457627118645%
+Set: 5 percent: 90.67164179104478%
+Set: 6 percent: 95.83333333333334%
+Set: 7 percent: 88.3495145631068%
+Set: 8 percent: 81.91126279863481%
+Set: 9 percent: 92.07920792079209%
+Set: 10 percent: 90.47936085219706%
+
+Excluded indexes: [ 16, 8, ]
+Set: 0 percent: 91.49659863945578%
+Set: 1 percent: 93.54838709677419%
+Set: 2 percent: 92.90322580645162%
+Set: 3 percent: 91.74917491749174%
+Set: 4 percent: 87.79661016949153%
+Set: 5 percent: 88.80597014925374%
+Set: 6 percent: 95.13888888888889%
+Set: 7 percent: 86.73139158576052%
+Set: 8 percent: 83.27645051194538%
+Set: 9 percent: 91.74917491749174%
+Set: 10 percent: 90.37949400798935%
+
+Excluded indexes: [ 16, 8, 6, ]
+Set: 0 percent: 93.19727891156462%
+Set: 1 percent: 94.72140762463343%
+Set: 2 percent: 90.64516129032259%
+Set: 3 percent: 94.38943894389439%
+Set: 4 percent: 87.79661016949153%
+Set: 5 percent: 90.29850746268657%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 86.73139158576052%
+Set: 8 percent: 81.22866894197952%
+Set: 9 percent: 92.07920792079209%
+Set: 10 percent: 90.71238348868175%
+
+Excluded indexes: [ 16, 8, 6, 4, ]
+Set: 0 percent: 94.21768707482994%
+Set: 1 percent: 94.13489736070382%
+Set: 2 percent: 90.64516129032259%
+Set: 3 percent: 93.3993399339934%
+Set: 4 percent: 86.77966101694915%
+Set: 5 percent: 90.29850746268657%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 86.73139158576052%
+Set: 8 percent: 83.61774744027304%
+Set: 9 percent: 91.0891089108911%
+Set: 10 percent: 90.67909454061251%
+
+Excluded indexes: [ 16, 8, 6, 4, 3, ]
+Set: 0 percent: 94.5578231292517%
+Set: 1 percent: 94.72140762463343%
+Set: 2 percent: 90.32258064516128%
+Set: 3 percent: 93.3993399339934%
+Set: 4 percent: 86.77966101694915%
+Set: 5 percent: 90.29850746268657%
+Set: 6 percent: 95.48611111111111%
+Set: 7 percent: 87.05501618122977%
+Set: 8 percent: 82.93515358361775%
+Set: 9 percent: 91.74917491749174%
+Set: 10 percent: 90.77896138482025%
+
+Excluded indexes: [ 16, 8, 6, 4, 3, 2, ]
+Set: 0 percent: 93.87755102040816%
+Set: 1 percent: 94.13489736070382%
+Set: 2 percent: 90.0%
+Set: 3 percent: 93.72937293729373%
+Set: 4 percent: 87.79661016949153%
+Set: 5 percent: 91.4179104477612%
+Set: 6 percent: 95.83333333333334%
+Set: 7 percent: 87.70226537216828%
+Set: 8 percent: 84.64163822525597%
+Set: 9 percent: 90.75907590759076%
+Set: 10 percent: 91.01198402130493%
+
+---------------------------------------
+
+Process finished with exit code 0

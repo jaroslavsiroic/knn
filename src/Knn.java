@@ -3,30 +3,33 @@ import java.util.*;
 public class Knn {
     private int k;
     private Model uModel;
-    ArrayList<Model> set;
+    private ArrayList<Model> set;
 
-    public int init(ArrayList<Model> set, Model uModel, int k){
+    public int init(ArrayList<Model> set, Model uModel, int k) {
         this.set = set;
         this.uModel = uModel;
         this.k = k;
 
-        for(Model m : set){
+        for (Model m : set){
             m.distance = distance(m); // calc distance
         }
         Collections.sort(set, (o1, o2) -> Double.compare(o1.distance, o2.distance)); //sort set by distance
 
         return determineClass();
     }
-    private double distance(Model model){
-        double distance=0;
-        for(int i=0; i < model.vector.length; i++){
-            distance+=Math.pow(model.vector[i]-uModel.vector[i],2);
+    private double distance(Model model) {
+        double distance = 0;
+
+        int minVector = Math.min(model.vector.length, uModel.vector.length);
+
+        for (int i = 0; i < minVector; i++) {
+            distance += Math.pow(model.vector[i] - uModel.vector[i], 2);
         }
-        distance=Math.sqrt(distance);
+        distance = Math.sqrt(distance);
         return distance;
     }
 
-    private ArrayList<Model> getNearest(){
+    private ArrayList<Model> getNearest() {
         int i = 0;
         ArrayList<Model> nearestObjects = new ArrayList<Model>();
         for (Model model : set) {
@@ -37,7 +40,7 @@ public class Knn {
         return nearestObjects;
     }
 
-    private int determineClass(){
+    private int determineClass() {
         Map<Integer, Integer> map = new HashMap<>();
 
         for (Model m : getNearest()) {
