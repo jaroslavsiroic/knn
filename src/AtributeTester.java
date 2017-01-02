@@ -1,7 +1,14 @@
 import java.util.ArrayList;
 
 public class AtributeTester {
-    private Statistics statistics = new Statistics();
+    //private Statistics statistics = new Statistics();
+    private ThreadController threadController;
+    private final int threadCount;
+
+    public AtributeTester(int threadCount) {
+        this.threadCount = threadCount;
+        threadController = new ThreadController(threadCount);
+    }
 
     private ArrayList<String> backTrack(double[] arr, ArrayList<Integer> excludedIndexlist) {
         ArrayList<Double> list = new ArrayList<>();
@@ -75,15 +82,24 @@ public class AtributeTester {
     public ArrayList<Model> getBestSet(ArrayList<ArrayList<Model>> setOfSets, int k) {
         double bestPercent = 0;
         int bestSetIndex = 0;
-        double perc;
+        int threadIndex;
+        Returner returner;
+
         System.out.println("Finding best set out of "+setOfSets.size()+" sets");
         for (int i = 0; i < setOfSets.size(); i++) {
-            perc = statistics.calcPercentage(k, setOfSets.get(i));
-            if (perc > bestPercent) {
-                bestPercent = perc;
-                bestSetIndex = i;
+            //perc = statistics.calcPercentage(k, setOfSets.get(i)); // old bottleneck <-
+            threadIndex = i % threadCount;
+            threadController.initThread(setOfSets.get(i), i, k, threadIndex);
+            if (threadIndex == threadCount-1 || i == setOfSets.size()-1) {
+                // then calculate stuff
+                returner = threadController.bestPercentInUnderTake(); // new multithreaded solution <-
+                if (returner.bestPercent > bestPercent) {
+                    bestPercent = returner.bestPercent;
+                    bestSetIndex = returner.bestPercentIndex;
+                }
             }
-            System.out.print(i+" ");
+
+            //System.out.print(i+" ");
         }
         System.out.println("Found! Best perc "+bestPercent+" & bestsetIndex "+ bestSetIndex);
         return setOfSets.get(bestSetIndex);
