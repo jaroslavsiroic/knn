@@ -62,7 +62,7 @@ public class AtributeTester {
     // I want to exclude attrToEx (ec. 2) attr and find best attributes
     public ArrayList<String> getBestAttr(ArrayList<Model> initSet, int k, int attrToEx) {
         //so lets do it
-        System.out.println("Exclude "+attrToEx+" attr with k="+k);
+        System.out.println("Exclude "+attrToEx+" attr with k="+k+" with threadCount="+threadCount);
         ArrayList<Model> bestSet = getBestOfTheBest(initSet, k, attrToEx);
         Model bestModel = bestSet.get(0);
         System.out.println("Done");

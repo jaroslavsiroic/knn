@@ -61,10 +61,43 @@ public class Program {
 //        ej.calculatePercentage(6, new int[]{0, 1, 2, 4, 11, 16});
 //        ej.calculatePercentage(9, new int[]{0, 2, 4, 12, 15, 16});
 //        ej.calculatePercentage(12, new int[]{2, 3, 4, 6, 8, 16});
-        attributeTester(8, 1);
+//        attributeTester(8, 1);
 
+        threadTester(1, 3, new int[]{1, 2, 4, 6, 10, 16});
     }
+    
+    public static void threadTester(int attributesToEliminate, int k, int threadCount[]) {
+        AtributeTester atributeTester = null;
+        PrintWriter writer = null;
+        long time;
 
+        try {
+            writer = new PrintWriter("outputThread.txt", "UTF-8");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        writer.println("ThreadCount\tTime");
+        for (int i = 0; i < threadCount.length; i++) {
+            atributeTester = new AtributeTester(threadCount[i]);
+            time = speedTester(ReadFile.testSet, atributeTester, attributesToEliminate, k);
+            writer.println(threadCount[i]+"\t\t\t"+time);
+        }
+        writer.close();
+    }
+    
+    public static long speedTester(ArrayList<Model> set, AtributeTester atributeTester, int attrToEx, int k) {
+        long startTime, endTime, totalTime;
+        
+        startTime = System.currentTimeMillis();
+        atributeTester.getBestAttr(clone(set), k, attrToEx);
+        endTime = System.currentTimeMillis();
+        totalTime = (endTime - startTime)/1000;
+        System.out.println("Calculation time: "+totalTime);
+        return totalTime;
+    }
+    
     public static void attributeTester(int threadCount, int attributesToEliminate) {
         int[] kValues = {3};
         AtributeTester atributeTester = new AtributeTester(threadCount);
@@ -78,7 +111,7 @@ public class Program {
             e.printStackTrace();
         }
 
-        writeToTXT(kValues, ReadFile.testSet, writer, atributeTester, attributesToEliminate);
+//        writeToTXT(kValues, ReadFile.testSet, writer, atributeTester, attributesToEliminate);
 //        writer.println();
 //        writeToTXT(kValues, ReadFile.trainingSet, writer, atributeTester, attributesToEliminate);
         writer.close();
